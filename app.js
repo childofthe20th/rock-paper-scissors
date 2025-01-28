@@ -34,6 +34,8 @@ let computerScore = 0;
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
         console.log('It is a tie');
+    } else if (humanChoice === undefined) {
+        console.log('Try again');
     } else if (humanChoice === 'rock' && computerChoice === 'scissors' || humanChoice === 'paper' && computerChoice === 'rock' || humanChoice === 'scissors' && computerChoice === 'paper') {
         humanScore++;
         console.log(`You win! ${humanChoice} beats ${computerChoice}`);
@@ -54,6 +56,8 @@ function playGame() {
         console.log('You win the game!');
     } else if (humanScore < computerScore) {
         console.log('You lose the game!');
+    } else if (humanScore === 0 && computerScore === 0) {
+        console.log('No winner');
     } else {
         console.log('It is a tie!');
     }
